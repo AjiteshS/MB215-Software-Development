@@ -1,0 +1,18 @@
+import random
+
+def simulate_investment(amount, years, rate_min, rate_max):
+    for year in range(1, years + 1):
+        rate = random.uniform(rate_min, rate_max)
+        amount += amount * (rate / 100)  # Calculate the growth based on the interest rate
+        print(f"Year {year}: Rate = {rate:.2f}%, Amount = ${amount:.2f}")
+    
+    return amount
+
+# Example usage
+initial_investment = 10000  # Starting investment amount in dollars
+investment_years = 5        # Number of years to simulate
+min_rate = 2.0              # Minimum annual interest rate in percentage
+max_rate = 7.0              # Maximum annual interest rate in percentage
+
+final_amount = simulate_investment(initial_investment, investment_years, min_rate, max_rate)
+print(f"\nFinal amount after {investment_years} years: ${final_amount:.2f}")

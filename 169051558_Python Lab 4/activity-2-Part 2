@@ -1,0 +1,21 @@
+# Define the function
+def read_from_file(filename):
+    try:
+        with open(filename, 'r') as file:
+            content = file.read()
+        return content
+    except FileNotFoundError:
+        print(f"The file '{filename}' does not exist.")
+        return None
+    except IOError as e:
+        print(f"An error occurred while reading the file: {e}")
+        return None
+
+# Call the function
+file_content = read_from_file(".gitignore")
+
+if file_content:
+    print("File content:")
+    print(file_content)
+
+# this program reads from the .gitignore file in the directory and displays the contents

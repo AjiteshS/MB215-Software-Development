@@ -1,0 +1,27 @@
+def write_to_file(filename, data):
+    with open(filename, 'w') as file:
+        file.write(data)
+
+def read_from_file(filename):
+    with open(filename, 'r') as file:
+        return file.read()
+
+def append_to_file(filename, data):
+    with open(filename, 'a') as file:
+        file.write(data)
+
+# Demonstrating the functions
+if __name__ == "__main__":
+    # Writing to a file
+    write_to_file('test file.txt', 'Hello, World!\n')
+
+    # Reading from a file
+    content = read_from_file('test file.txt')
+    print("File Content After Writing:", content)
+
+    # Appending to a file
+    append_to_file('test file.txt', 'This is an appended line.\n')
+
+    # Reading again to show appended content
+    content = read_from_file('test file.txt')
+    print("File Content After Appending:", content)

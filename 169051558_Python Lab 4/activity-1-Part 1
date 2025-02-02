@@ -1,0 +1,11 @@
+# This program will simulate rolling a dice 
+import random
+def roll_dice(num_dice, num_sides):
+    total = 0
+    for _ in range(num_dice):  # Loop for each die
+        roll = random.randint(1, num_sides)  # Roll the die with the given number of sides
+        total += roll  # Add the result of the roll to the total
+    return total
+
+result = roll_dice(1, 6)  # Simulates rolling 1 six-sided dice
+print(f"Total: {result}")
